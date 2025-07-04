@@ -87,3 +87,8 @@ To use your custom reinforcement learning model, simply rename your `.pt` model 
 ```
 cd /path/to/Go2Arm_sim2sim/model
 ```
+## Acknowledgements🙏
+During the development of this project, we referred to the following excellent open-source projects. We would like to extend our sincere thanks to them:
+- Joint controller part:：[rl_sar](https://github.com/fan-ziqi/rl_sar)
+- Gripper grasp plugin:[gazebo_grasp_plugin](https://github.com/JenniferBuehler/gazebo-pkgs)
+
