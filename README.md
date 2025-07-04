@@ -1,4 +1,8 @@
 # Go2Arm_sim2sim
+[![ROS Noetic](https://img.shields.io/badge/ros-noetic-brightgreen.svg?logo=ros)](https://wiki.ros.org/noetic)
+[![Ubuntu 20.04](https://img.shields.io/badge/Ubuntu-20.04-blue.svg?logo=ubuntu)](https://ubuntu.com/)
+[![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg?logo=apache)](https://opensource.org/license/apache-2-0)
+
 🚀 Welcome to the **Go2Arm_sim2sim** platform! This project aims to provide an efficient and convenient simulation environment for verifying reinforcement learning algorithms for **legged manipulators**, assisting your research and development efforts.
 
 [中文文档](https://github.com/zzzJie-Robot/Go2Arm_sim2sim/blob/main/README_CN.md "中文文档")
