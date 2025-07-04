@@ -85,3 +85,12 @@ rosrun go2arm_gazebo keyboard_control
 ```
 cd /path/to/Go2Arm_sim2sim/model
 ```
+
+>注意⚠️
+>请确保您的模型输出动作的顺序与本项目中的输出顺序一致，同时请匹配电机PD参数
+
+## 致谢🙏
+本项目在开发过程中参考了以下优秀开源项目，特此表示衷心感谢：
+
+- 关节控制器部分：[rl_sar](https://github.com/fan-ziqi/rl_sar)
+- 夹爪抓取插件：[gazebo_grasp_plugin](https://github.com/JenniferBuehler/gazebo-pkgs)
