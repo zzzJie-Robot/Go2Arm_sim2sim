@@ -22,12 +22,12 @@ git clone https://github.com/zzzJie-Robot/Go2Arm_sim2sim.git
 ```
 
 ## 第二步：安装依赖环境
-### ROS 依赖包安装
+**ROS 依赖包安装**
 确保系统已安装以下 ROS 依赖包，可通过以下命令一次性安装完成：
 ```
 sudo apt install ros-noetic-teleop-twist-keyboard ros-noetic-controller-interface ros-noetic-gazebo-ros-control ros-noetic-joint-state-controller ros-noetic-effort-controllers ros-noetic-joint-trajectory-controller ros-noetic-joy ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-controller-manager
 ```
-### libtorch 库部署
+**libtorch 库部署**
 
 1.选择合适目录（如个人工作区）并进入：
 ```
@@ -44,7 +44,7 @@ echo 'export Torch_DIR=<YOUR_DESIRED_PATH>/libtorch' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### 第三步：编译项目
+## 第三步：编译项目
 进入项目根目录，执行编译命令：
 
 ```
@@ -52,7 +52,7 @@ cd /path/to/Go2Arm_sim2sim
 catkin_make
 ```
 
-### 第四步：运行示例程序
+## 第四步：运行示例程序
 依次打开三个终端，按以下顺序执行对应命令：
 
 **终端 1：环境初始化**
