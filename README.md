@@ -19,6 +19,8 @@
 |--------------------|-------------------|
 | ![IsaacLab](https://github.com/zzzJie-Robot/Go2Arm_Lab/raw/main/video/IsaacLab.gif) | ![Gazebo](https://github.com/zzzJie-Robot/Go2Arm_Lab/raw/main/video/Gazebo.gif) |
 
+For more videos, please visit my [Bilibili homepage](https://space.bilibili.com/400627082?spm_id_from=333.1007.0.0).
+
 # Quick Start Guide 📦
 ## Step 1: Get the Code Repository
 Clone the project code to your local machine by running the following command in the terminal:  
