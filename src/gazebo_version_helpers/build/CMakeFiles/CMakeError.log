@@ -1,0 +1,58 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/legion/gazebo-pkgs/gazebo_version_helpers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_207ca/fast && /usr/bin/make -f CMakeFiles/cmTC_207ca.dir/build.make CMakeFiles/cmTC_207ca.dir/build
+make[1]: 进入目录“/home/legion/gazebo-pkgs/gazebo_version_helpers/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_207ca.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_207ca.dir/src.c.o   -c /home/legion/gazebo-pkgs/gazebo_version_helpers/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_207ca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_207ca.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_207ca.dir/src.c.o  -o cmTC_207ca 
+/usr/bin/ld: CMakeFiles/cmTC_207ca.dir/src.c.o: in function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x4a): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5b): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_207ca.dir/build.make:87：cmTC_207ca] 错误 1
+make[1]: 离开目录“/home/legion/gazebo-pkgs/gazebo_version_helpers/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_207ca/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/legion/gazebo-pkgs/gazebo_version_helpers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a0333/fast && /usr/bin/make -f CMakeFiles/cmTC_a0333.dir/build.make CMakeFiles/cmTC_a0333.dir/build
+make[1]: 进入目录“/home/legion/gazebo-pkgs/gazebo_version_helpers/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_a0333.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_a0333.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a0333
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a0333.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_a0333.dir/CheckFunctionExists.c.o  -o cmTC_a0333  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_a0333.dir/build.make:87：cmTC_a0333] 错误 1
+make[1]: 离开目录“/home/legion/gazebo-pkgs/gazebo_version_helpers/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_a0333/fast] 错误 2
+
+
+

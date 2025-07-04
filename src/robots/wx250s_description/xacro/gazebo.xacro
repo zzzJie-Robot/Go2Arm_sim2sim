@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/wx250s_gazebo</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
+
+    <gazebo reference="shoulder_link">
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="upper_arm_link">
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="upper_forearm_link">
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="lower_forearm_link">
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="wrist_link">
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="gripper_link">
+        <self_collide>true</self_collide>
+    </gazebo>
+
+</robot>

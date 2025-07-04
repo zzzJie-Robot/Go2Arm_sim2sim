@@ -1,0 +1,2 @@
+gazebo_grasp_plugin:gazebo_version_helpers:go2arm_gazebo:robot_joint_controller:robot_msgs:robots/go2_description:robots/go2_wx250s_description:robots/wx250s_description
+-DCATKIN_DEVEL_PREFIX=/home/legion/go2arm_sim2sim/devel -DCMAKE_INSTALL_PREFIX=/home/legion/go2arm_sim2sim/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/legion/gazebo-pkgs/gazebo_version_helpers/build/devel
+
+Name: gazebo_version_helpers
+Description: Description of gazebo_version_helpers
+Version: 0.0.0
+Cflags: -I/home/legion/gazebo-pkgs/gazebo_version_helpers/include
+Libs: -L${prefix}/lib -lgazebo_version_helpers
+Requires: gazebo_ros roscpp

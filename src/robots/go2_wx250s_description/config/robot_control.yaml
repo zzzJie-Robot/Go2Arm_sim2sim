@@ -1,0 +1,112 @@
+go2_wx250s_gazebo:
+    # Publish all joint states -----------------------------------
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 1000  
+
+    # FL Controllers ---------------------------------------
+    FL_hip_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: FL_hip_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    FL_thigh_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: FL_thigh_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    FL_calf_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: FL_calf_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    # FR Controllers ---------------------------------------
+    FR_hip_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: FR_hip_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    FR_thigh_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: FR_thigh_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    FR_calf_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: FR_calf_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    # RL Controllers ---------------------------------------
+    RL_hip_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: RL_hip_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    RL_thigh_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: RL_thigh_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    RL_calf_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: RL_calf_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    # RR Controllers ---------------------------------------
+    RR_hip_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: RR_hip_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    RR_thigh_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: RR_thigh_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+    RR_calf_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: RR_calf_joint
+        pid: {p: 25.0, i: 0.0, d: 0.5}
+
+
+
+    waist_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: waist
+        pid: {p: 5.0, i: 0.0, d: 0.5}
+
+    shoulder_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: shoulder
+        pid: {p: 5.0, i: 0.0, d: 0.5}
+
+    elbow_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: elbow
+        pid: {p: 5.0, i: 0.0, d: 0.5}
+
+    forearm_roll_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: forearm_roll
+        pid: {p: 5.0, i: 0.0, d: 0.5}
+
+    wrist_angle_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: wrist_angle
+        pid: {p: 5.0, i: 0.0, d: 0.5}
+
+    wrist_rotate_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: wrist_rotate
+        pid: {p: 5.0, i: 0.0, d: 0.5}
+
+    left_finger_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: left_finger
+        pid: {p: 5.0, i: 0.0, d: 0.5}
+
+    right_finger_controller:
+        type: robot_joint_controller/RobotJointController
+        joint: right_finger
+        pid: {p: 5.0, i: 0.0, d: 0.5}
+

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<robot name="box_with_handle" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Inertial Macros -->
+  <xacro:macro name="sphere_inertial_matrix" params="m r">
+    <inertial>
+      <mass value="${m}"/>
+      <inertia ixx="${2*m*r*r/5}" ixy="0" ixz="0"
+               iyy="${2*m*r*r/5}" iyz="0" 
+               izz="${2*m*r*r/5}"/>
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="cylinder_inertial_matrix" params="m r h">
+    <inertial>
+      <mass value="${m}"/>
+      <inertia ixx="${m*(3*r*r+h*h)/12}" ixy="0" ixz="0"
+               iyy="${m*(3*r*r+h*h)/12}" iyz="0"
+               izz="${m*r*r/2}"/> 
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="box_inertial_matrix" params="m l w h">
+    <inertial>
+      <mass value="${m}"/>
+      <inertia ixx="${m*(h*h + l*l)/12}" ixy="0" ixz="0"
+               iyy="${m*(w*w + l*l)/12}" iyz="0"
+               izz="${m*(w*w + h*h)/12}"/>
+    </inertial>
+  </xacro:macro>
+
+
+  <xacro:property name="box_size" value="0.1" />
+  <xacro:property name="box_mass" value="3.0" />
+
+  <xacro:property name="handle_radius" value="0.018" />
+  <xacro:property name="handle_mass" value="0.1" />
+  <xacro:property name="handle_length" value="0.3" />
+
+
+  <link name="box">
+    <xacro:box_inertial_matrix m="${box_mass}" l="${box_size}" w="${box_size}" h="${box_size}"/>
+    <visual>
+      <geometry><box size="${box_size} ${box_size} ${box_size}"/></geometry>
+      <material name="orange"><color rgba="1 0.5 0 1"/></material>
+    </visual>
+    <collision>
+      <geometry><box size="${box_size} ${box_size} ${box_size}"/></geometry>
+      <friction>
+        <ode>
+          <mu1>0.9</mu1>
+          <mu2>0.8</mu2>
+        </ode>
+      </friction>
+    </collision>
+  </link>
+
+  <!-- Handle Parts -->
+  <link name="handle_vertical">
+    <xacro:cylinder_inertial_matrix m="${handle_mass}" r="${handle_radius}" h="${handle_length}"/>
+
+    <visual>
+      <geometry><cylinder length="${handle_length}" radius="${handle_radius}"/></geometry>
+      <material name="grey"><color rgba="0.7 0.7 0.7 1"/></material>
+    </visual>
+    <collision>
+      <geometry><cylinder length="${handle_length}" radius="${handle_radius}"/></geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>100.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <kp>10000000.0</kp>
+            <kd>1.0</kd>
+            <min_depth>0.001</min_depth>
+            <max_vel>0.1</max_vel>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </link>
+
+  <link name="handle_horizontal">
+    <xacro:cylinder_inertial_matrix m="${handle_mass}" r="${handle_radius}" h="${handle_length}"/>
+
+    <visual>
+      <geometry><cylinder length="${handle_length}" radius="${handle_radius}"/></geometry>
+      <material name="grey"><color rgba="0.7 0.7 0.7 1"/></material>
+    </visual>
+    <collision>
+      <geometry><cylinder length="${handle_length}" radius="${handle_radius}"/></geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100.0</mu>
+            <mu2>100.0</mu2>
+          </ode>
+        </friction>
+        <contact>
+          <ode>
+            <kp>10000000.0</kp>
+            <kd>1.0</kd>
+            <min_depth>0.001</min_depth>
+            <max_vel>0.1</max_vel>
+          </ode>
+        </contact>
+      </surface>
+    </collision>
+  </link>
+
+  <!-- Joints -->
+  <joint name="box_to_handle" type="fixed">
+    <parent link="box"/>
+    <child link="handle_vertical"/>
+    <origin xyz="0 0 ${box_size}" rpy="0 0 0"/>  <!-- 放在盒子顶部中央 -->
+  </joint>
+  
+  <joint name="vertical_to_horizontal" type="fixed">
+    <parent link="handle_vertical"/>
+    <child link="handle_horizontal"/>
+    <origin xyz="0 0 ${handle_length/2}" rpy="1.5708 0 0"/>  <!-- 旋转90度使其水平 -->
+  </joint>
+
+
+  <!-- Gazebo 插件 -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/box_with_handle</robotNamespace>
+    </plugin>
+  </gazebo>
+
+
+</robot>

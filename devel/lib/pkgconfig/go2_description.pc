@@ -1,0 +1,8 @@
+prefix=/home/legion/go2arm_sim2sim/devel
+
+Name: go2_description
+Description: Description of go2_description
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

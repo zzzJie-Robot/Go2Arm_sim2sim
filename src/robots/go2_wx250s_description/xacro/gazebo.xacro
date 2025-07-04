@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<robot>
+    <!-- ros_control plugin -->
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/go2_wx250s_gazebo</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
+
+    <!-- Show the trajectory of trunk center. -->
+    <!--gazebo>
+        <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
+            <frequency>10</frequency>
+            <plot>
+                <link>base</link>
+                <pose>0 0 0 0 0 0</pose>
+                <material>Gazebo/Yellow</material>
+            </plot>
+        </plugin>
+    </gazebo-->
+
+    <!-- Show the trajectory of foot. You can add another trajectory about another foot. -->
+     <gazebo>
+        <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
+            <frequency>100</frequency>
+            <plot>
+                <link>FL_foot</link>
+                <pose>0 0 0 0 0 0</pose>
+            </plot>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
+            <bodyName>trunk</bodyName>
+            <topicName>/apply_force/trunk</topicName>
+        </plugin>
+    </gazebo>
+
+    <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name="imu_sensor" type="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <visualize>true</visualize>
+            <topic>__default_topic__</topic>
+            <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+                <topicName>trunk_imu</topicName>
+                <bodyName>imu_link</bodyName>
+                <updateRateHZ>100.0</updateRateHZ>
+                <gaussianNoise>0.0</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu_link</frameName>
+            </plugin>
+            <pose>0 0 0 0 0 0</pose>
+        </sensor>
+    </gazebo>
+
+
+    <!-- Foot contacts. -->
+    <gazebo reference="FR_calf">
+        <sensor name="FR_foot_contact" type="contact">
+        <update_rate>100</update_rate>
+        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+        <contact>
+            <collision>FR_calf_fixed_joint_lump__FR_foot_collision_1</collision>
+        </contact>
+        </sensor>
+    </gazebo>
+    <gazebo reference="FL_calf">
+        <sensor name="FL_foot_contact" type="contact">
+        <update_rate>100</update_rate>
+        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+        <contact>
+            <collision>FL_calf_fixed_joint_lump__FL_foot_collision_1</collision>
+        </contact>
+        </sensor>
+    </gazebo>
+    <gazebo reference="RR_calf">
+        <sensor name="RR_foot_contact" type="contact">
+        <update_rate>100</update_rate>
+        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+        <contact>
+            <collision>RR_calf_fixed_joint_lump__RR_foot_collision_1</collision>
+        </contact>
+        </sensor>
+    </gazebo>
+    <gazebo reference="RL_calf">
+        <sensor name="RL_foot_contact" type="contact">
+        <update_rate>100</update_rate>
+        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+        <contact>
+            <collision>RL_calf_fixed_joint_lump__RL_foot_collision_1</collision>
+        </contact>
+        </sensor>
+    </gazebo>
+
+    <!-- Visualization of Foot contacts. -->
+    <gazebo reference="FR_foot">
+        <visual>
+            <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
+                <topicName>FR_foot_contact</topicName>
+            </plugin>
+        </visual>
+    </gazebo>
+    <gazebo reference="FL_foot">
+        <visual>
+            <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
+                <topicName>FL_foot_contact</topicName>
+            </plugin>
+        </visual>
+    </gazebo>
+    <gazebo reference="RR_foot">
+        <visual>
+            <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
+                <topicName>RR_foot_contact</topicName>
+            </plugin>
+        </visual>
+    </gazebo>
+    <gazebo reference="RL_foot">
+        <visual>
+            <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
+                <topicName>RL_foot_contact</topicName>
+            </plugin>
+        </visual>
+    </gazebo>
+
+    <gazebo reference="base">
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <gazebo reference="trunk">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+    <gazebo reference="stick_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+
+    <gazebo reference="imu_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+
+    <!-- FL leg -->
+    <gazebo reference="FL_hip">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+
+    </gazebo>
+    <gazebo reference="FL_thigh">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+    <gazebo reference="FL_calf">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+    <gazebo reference="FL_foot">
+        <mu1>0.6</mu1>
+        <mu2>0.6</mu2>
+        <self_collide>true</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+    <!-- FR leg -->
+    <gazebo reference="FR_hip">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+    <gazebo reference="FR_thigh">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+    <gazebo reference="FR_calf">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+    <gazebo reference="FR_foot">
+        <mu1>0.6</mu1>
+        <mu2>0.6</mu2>
+        <self_collide>true</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+    <!-- RL leg -->
+    <gazebo reference="RL_hip">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+    <gazebo reference="RL_thigh">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+    <gazebo reference="RL_calf">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+    <gazebo reference="RL_foot">
+        <mu1>0.6</mu1>
+        <mu2>0.6</mu2>
+        <self_collide>true</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+    <!-- RR leg -->
+    <gazebo reference="RR_hip">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+    <gazebo reference="RR_thigh">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+    <gazebo reference="RR_calf">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+    <gazebo reference="RR_foot">
+        <mu1>0.6</mu1>
+        <mu2>0.6</mu2>
+        <self_collide>true</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+
+    <gazebo reference="shoulder_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="upper_arm_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="upper_forearm_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="lower_forearm_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="wrist_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="gripper_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+
+
+    <gazebo reference="left_finger_link">
+        <mu1>1000.9</mu1>
+        <mu2>1000.8</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>
+
+    <gazebo reference="right_finger_link">
+        <mu1>1000.9</mu1>
+        <mu2>1000.8</mu2>
+        <self_collide>true</self_collide>
+    </gazebo>   
+
+
+    <gazebo>
+        <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+            <arm>
+            	<!-- 机械臂名称,注意确保唯一性 -->
+                <arm_name>wx250s/gripper_finger</arm_name>
+                <!--与夹持器末端 link 相连的 link 、,可以配置多个-->
+                <palm_link>wx250s/gripper_link</palm_link>
+                <!--直接与抓取物体接触的 link ,与 palm_link 之间不能存在其他的 link-->
+                <gripper_link>wx250s/left_finger_link</gripper_link>
+                <gripper_link>wx250s/right_finger_link</gripper_link>
+            </arm>
+            
+			<!--是否是相反力的夹⻆判断阈值 -->
+            <forces_angle_tolerance>100</forces_angle_tolerance>
+            
+            <!--检查频率,需要小于 gazebo 的刷新频率-->
+            <update_rate>100</update_rate>
+            
+            <!-- 检测阈值:在一个 update_rate 内,物体与夹爪之间的碰触次数-->
+            <grip_count_threshold>1</grip_count_threshold>
+
+		   <!-- 最大记数数目，一般为grip_count_threshold的两倍-->
+            <max_grip_count>2</max_grip_count>
+            
+            <!--释放物体时夹爪与物体的距离-->
+            <release_tolerance>0.01</release_tolerance>
+            
+           <!-- 当一个对象被附加时，与它的碰撞可能被禁用，以防机器人仍然保持抖动-->
+            <disable_collisions_on_attach>false</disable_collisions_on_attach>
+            <contact_topic>__default_topic__</contact_topic>
+        </plugin>
+    </gazebo>
+
+
+
+</robot>

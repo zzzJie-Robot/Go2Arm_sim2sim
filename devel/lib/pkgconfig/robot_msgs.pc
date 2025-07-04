@@ -1,0 +1,8 @@
+prefix=/home/legion/go2arm_sim2sim/devel
+
+Name: robot_msgs
+Description: Description of robot_msgs
+Version: 0.0.0
+Cflags: -I/home/legion/go2arm_sim2sim/devel/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime std_msgs geometry_msgs sensor_msgs

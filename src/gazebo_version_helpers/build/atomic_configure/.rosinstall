@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/legion/gazebo-pkgs/gazebo_version_helpers/build/devel/setup.sh

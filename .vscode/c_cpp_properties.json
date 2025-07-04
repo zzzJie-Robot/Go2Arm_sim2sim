@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/home/legion/unitree_ws/devel/include/**",
+                "/opt/ros/noetic/include/**",
+                "/home/legion/unitree_ws/src/unitree_controller/include/**",
+                "/home/legion/unitree_ws/src/unitree_gazebo/include/**",
+                "/home/legion/unitree_ws/src/unitree_legged_control/include/**",
+                "/usr/include/**",
+                "/opt/ros/noetic/include",
+                "/home/legion/libtorch/include/**",
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14",
+            "compileCommands": [
+                "${workspaceFolder}/build/compile_commands.json"
+            ]
+        }
+    ],
+    "version": 4
+}
