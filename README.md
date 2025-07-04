@@ -8,10 +8,10 @@
 - **Base platform**: Unitree Go2 quadruped
 - **Manipulator**: Interbotix WidowX 250s robotic arm
 
->**💻 System Requirements**
+>**💻 System Requirements**  
 >This project is built on `ros-noetic` and is recommended to be run on the `Ubuntu20.04` operating system.
 
->**📢 IsaacLab Simulation**
+>**📢 IsaacLab Simulation**  
 >If you would like to conduct reinforcement learning training for legged robotic manipulators in IsaacLab, please visit:
 >[Go2Arm_Lab](https://github.com/zzzJie-Robot/Go2Arm_Lab)
 
