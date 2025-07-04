@@ -3,6 +3,9 @@
 
 💡`sim2sim`代表`IsaacLab`平台迁移`Gazebo`平台，实物平台部署(`sim2real`)将在后续版本推出
 
+- **基础平台**: Unitree Go2 四足机器人
+- **操作器**: Interbotix WidowX 250s 机械臂
+
 >**💻系统要求**
 >本项目基于`ros-noetic`构建，推荐运行在`Ubuntu20.04`操作系统上。
 
