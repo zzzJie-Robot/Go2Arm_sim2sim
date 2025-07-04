@@ -17,6 +17,8 @@
 |--------------------|-------------------|
 | ![IsaacLab](https://github.com/zzzJie-Robot/Go2Arm_Lab/raw/main/video/IsaacLab.gif) | ![Gazebo](https://github.com/zzzJie-Robot/Go2Arm_Lab/raw/main/video/Gazebo.gif) |
 
+更多视频请访问我的[Bilibili 主页](https://space.bilibili.com/400627082?spm_id_from=333.1007.0.0).
+
 # 快速上手指南📦
 ## 第一步：获取代码仓库
 在终端中执行以下命令，将项目代码克隆至本地：  
