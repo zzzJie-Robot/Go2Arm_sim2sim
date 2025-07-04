@@ -1,8 +1,0 @@
-prefix=/home/legion/go2arm_sim2sim/devel
-
-Name: go2arm_gazebo
-Description: Description of go2arm_gazebo
-Version: 0.0.0
-Cflags: -I/home/legion/go2arm_sim2sim/devel/include
-Libs: -L${prefix}/lib 
-Requires: std_msgs geometry_msgs message_runtime robot_joint_controller
