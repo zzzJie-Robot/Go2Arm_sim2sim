@@ -1,3 +1,6 @@
+<!-- Copyright (c) 2025-2026 Junjie Zhu -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
 <?xml version="1.0"?>
 <robot name="box_with_handle" xmlns:xacro="http://www.ros.org/wiki/xacro">
 

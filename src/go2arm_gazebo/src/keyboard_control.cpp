@@ -1,3 +1,6 @@
+// Copyright (c) 2025-2026 Junjie Zhu 
+// SPDX-License-Identifier: Apache-2.0 
+
 #include <ros/ros.h>
 #include <std_msgs/Int32.h>
 #include <std_msgs/Float32.h>

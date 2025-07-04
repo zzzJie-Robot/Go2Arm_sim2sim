@@ -1,3 +1,6 @@
+<!-- Copyright (c) 2025-2026 Junjie Zhu -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
     <!-- Macro for inertia matrix -->
     <xacro:macro name="sphere_inertial_matrix" params="m r">

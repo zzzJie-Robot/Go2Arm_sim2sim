@@ -1,9 +1,0 @@
-<launch>
-
-    <param name="robot_description" textfile="$(find go2_wx250s_description)/urdf/box.urdf" />
-
-    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
-
-    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model box_with_handle -param robot_description"  />
-
-</launch>
