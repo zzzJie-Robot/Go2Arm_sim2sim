@@ -1,8 +1,0 @@
-prefix=/home/legion/go2arm_sim2sim/install
-
-Name: robot_joint_controller
-Description: Description of robot_joint_controller
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lrobot_joint_controller
-Requires: robot_msgs controller_interface hardware_interface pluginlib roscpp

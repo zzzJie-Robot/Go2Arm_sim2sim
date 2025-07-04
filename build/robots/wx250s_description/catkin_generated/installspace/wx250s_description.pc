@@ -1,8 +1,0 @@
-prefix=/home/legion/go2arm_sim2sim/install
-
-Name: wx250s_description
-Description: Description of wx250s_description
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
