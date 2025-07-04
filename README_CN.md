@@ -28,6 +28,7 @@ git clone https://github.com/zzzJie-Robot/Go2Arm_sim2sim.git
 
 ## 第二步：安装依赖环境
 **ROS 依赖包安装**
+
 确保系统已安装以下 ROS 依赖包，可通过以下命令一次性安装完成：
 ```
 sudo apt install ros-noetic-teleop-twist-keyboard ros-noetic-controller-interface ros-noetic-gazebo-ros-control ros-noetic-joint-state-controller ros-noetic-effort-controllers ros-noetic-joint-trajectory-controller ros-noetic-joy ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-controller-manager
