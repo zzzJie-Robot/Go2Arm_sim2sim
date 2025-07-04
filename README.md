@@ -50,7 +50,7 @@ echo 'export Torch_DIR=<YOUR_DESIRED_PATH>/libtorch' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-**Step 3: Compile the Project**
+## Step 3: Compile the Project
 Navigate to the project root directory and run the compilation command:
 
 ```
@@ -58,7 +58,7 @@ cd /path/to/Go2Arm_sim2sim
 catkin_make
 ```
 
-**Step 4: Run the Example Program**
+## Step 4: Run the Example Program
 Open three terminals and execute the following commands in sequence:
 
 **Terminal 1: Environment Initialization**
