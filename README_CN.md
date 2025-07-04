@@ -86,7 +86,7 @@ rosrun go2arm_gazebo keyboard_control
 cd /path/to/Go2Arm_sim2sim/model
 ```
 
->注意⚠️
+>注意⚠️  
 >请确保您的模型输出动作的顺序与本项目中的输出顺序一致，同时请匹配电机PD参数
 
 ## 致谢🙏
