@@ -1,4 +1,8 @@
 # Go2Arm_sim2sim
+[![ROS Noetic](https://img.shields.io/badge/ros-noetic-brightgreen.svg?logo=ros)](https://wiki.ros.org/noetic)
+[![Ubuntu 20.04/](https://img.shields.io/badge/Ubuntu-20.04-blue.svg?logo=ubuntu)](https://ubuntu.com/)
+[![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg?logo=apache)](https://opensource.org/license/apache-2-0)
+
 🚀欢迎使用 Go2Arm_sim2sim 平台，本项目旨在为足式操作机器人的强化学习算法提供一个高效便捷的仿真验证环境，助力您的研究与开发工作。
 
 💡`sim2sim`代表`IsaacLab`平台迁移`Gazebo`平台，实物平台部署(`sim2real`)将在后续版本推出
