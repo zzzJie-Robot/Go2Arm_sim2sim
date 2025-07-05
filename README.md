@@ -86,8 +86,21 @@ source ./devel/setup.bash
 rosrun go2arm_gazebo keyboard_control
 ```
 
+## Keyboard Control for Your Robot
+
+| Keyboard | Robot Dog Movement       | Keyboard | Gripper Movement       | Keyboard | Gripper Pose                     | Keyboard | Gripper Action   |
+| -------- | ------------------------ | -------- | ---------------------- | -------- | -------------------------------- | -------- | ---------------- |
+| w        | Robot dog moves forward  | i        | Gripper moves forward  | 7        | Gripper rolls clockwise          | 1        | Gripper grips    |
+| s        | Robot dog moves backward | k        | Gripper moves backward | 4        | Gripper rolls counterclockwise   | 2        | Gripper releases |
+| a        | Robot dog moves left     | j        | Gripper moves left     | 8        | Gripper pitches clockwise        |          |                  |
+| d        | Robot dog moves right    | l        | Gripper moves right    | 5        | Gripper pitches counterclockwise |          |                  |
+| q        | Robot dog turns left     | u        | Gripper moves up       | 9        | Gripper yaws clockwise           |          |                  |
+| e        | Robot dog turns right    | o        | Gripper moves down     | 6        | Gripper yaws counterclockwise    |          |                  |
+
+
+
 ## Add Your RL Model
-To use your custom reinforcement learning model, simply rename your `.pt` model file to `model.pt` and replace the existing file with the same name in the project. The path is as follows:
+To use your custom reinforcement learning model, simply rename your `.pt` model file to `policy.pt` and replace the existing file with the same name in the project. The path is as follows:
 ```
 cd /path/to/Go2Arm_sim2sim/model
 ```
