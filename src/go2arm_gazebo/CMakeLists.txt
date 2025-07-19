@@ -79,13 +79,6 @@ target_link_libraries(main
     ${TORCH_LIBRARIES}
 )
 
-add_executable(force_main src/force_main.cpp )
-add_dependencies(force_main ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(force_main
-    ${catkin_LIBRARIES}
-    ${TORCH_LIBRARIES}
-)
-
 add_executable(keyboard_control src/keyboard_control.cpp)
 target_link_libraries(keyboard_control
     ${catkin_LIBRARIES}
@@ -98,8 +91,3 @@ target_link_libraries(init_state
 
 )
 
-add_executable(params src/params.cpp)
-target_link_libraries(params
-    ${catkin_LIBRARIES}
-
-)

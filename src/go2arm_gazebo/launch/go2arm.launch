@@ -42,7 +42,6 @@ SPDX-License-Identifier: Apache-2.0  -->
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(arg dollar)$(arg robot_path)/config/robot_control.yaml" command="load"/>
-    <rosparam file="$(find go2arm_gazebo)/model/config.yaml" command="load"/>
 
     <!-- load the controllers -->
     <node pkg="controller_manager" type="spawner" name="controller_spawner" respawn="false"
