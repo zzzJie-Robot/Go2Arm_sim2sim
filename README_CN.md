@@ -3,6 +3,15 @@
 [![Ubuntu 20.04/](https://img.shields.io/badge/Ubuntu-20.04-blue.svg?logo=ubuntu)](https://ubuntu.com/)
 [![License](https://img.shields.io/badge/license-Apache2.0-yellow.svg?logo=apache)](https://opensource.org/license/apache-2-0)
 
+> [!IMPORTANT]
+> **🎉 全新升级版本已发布！**
+> Go2Arm_sim2sim 已整合进 [**LeggedManip_Lab**](https://github.com/zzzJie-Robot/LeggedManip_Lab)，新框架覆盖 IsaacLab 训练 → MuJoCo 部署 → 真机迁移的完整管线，无需额外配置 Gazebo 环境。
+>
+> 👉 **新用户请直接使用 [LeggedManip_Lab](https://github.com/zzzJie-Robot/LeggedManip_Lab)**
+> 👉 本仓库不再更新，仅作归档参考
+
+---
+
 🚀欢迎使用 Go2Arm_sim2sim 平台，本项目旨在为足式操作机器人的强化学习算法提供一个高效便捷的仿真验证环境，助力您的研究与开发工作。
 
 💡`sim2sim`代表`IsaacLab`平台迁移`Gazebo`平台，实物平台部署(`sim2real`)将在后续版本推出
