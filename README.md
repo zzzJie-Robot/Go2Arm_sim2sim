@@ -5,6 +5,17 @@
 
 🚀 Welcome to the **Go2Arm_sim2sim** platform! This project aims to provide an efficient and convenient simulation environment for verifying reinforcement learning algorithms for **legged manipulators**, assisting your research and development efforts.
 
+> [!IMPORTANT]
+> **🎉 A brand-new version is here!**
+> 
+> Go2Arm_sim2sim has been integrated into [**LeggedManip_Lab**](https://github.com/zzzJie-Robot/LeggedManip_Lab) — a unified framework covering the full pipeline from IsaacLab training → MuJoCo deployment → real-world transfer, with no extra Gazebo setup needed.
+>
+> 👉 **New users should use [LeggedManip_Lab](https://github.com/zzzJie-Robot/LeggedManip_Lab)**
+> 
+> 👉 This repository is archived — no further updates
+
+---
+
 [中文文档](https://github.com/zzzJie-Robot/Go2Arm_sim2sim/blob/main/README_CN.md "中文文档")
 
 💡 sim2sim represents the migration from the IsaacLab platform to the Gazebo platform. The deployment on physical platforms (sim2real) will be introduced in future versions.
